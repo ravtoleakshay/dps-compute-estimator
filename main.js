@@ -313,6 +313,17 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // Combined Calculate Button
   document.getElementById("calculateBtn").addEventListener("click", () => {
+    const assets = Number(document.getElementById("stAssets").value)
+    const tagsPerAsset = Number(document.getElementById("stTagsPerAsset").value)
+
+    if (assets > 40) {
+      document.getElementById("stAssets").value = 40
+    }
+
+    if (tagsPerAsset > 200) {
+      document.getElementById("stTagsPerAsset").value = 200
+    }
+
     calculateStorage()
     calculateCompute()
   })
